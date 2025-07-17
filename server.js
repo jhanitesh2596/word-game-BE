@@ -49,7 +49,7 @@ app.get("/fill", async (req, res) => {
   const [result] = await pool.query("INSERT INTO words (word) VALUES ?", [
     values,
   ]);
-  res.json({ message: "User inserted" });
+  res.json({ message: "User inserted", result: result });
 });
 
 app.listen(PORT, () => {
